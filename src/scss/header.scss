@@ -1,0 +1,65 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .menu {
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+
+    &__list {
+      margin-left: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      border-radius: 60px;
+      gap: 32px;
+      background-color: rgb($white, .2);
+
+      a {
+        font-size: 16px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #cbcbcb;
+        }
+      }
+    }
+
+    &__navigate {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+    }
+
+    &__drop {
+      cursor: pointer;
+      background-color: $white;
+      color: $black;
+      padding-right: 52px;
+      position: relative;
+
+      &:hover {
+        background-color: #cbcbcb;
+
+        &::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        transition: transform 0.3s;
+        transform: translateY(-50%);
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        content: url("../images/drop.svg");
+      }
+    }
+  }
+}
